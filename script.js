@@ -3,7 +3,7 @@ const supabaseurl = 'https://vfegtbeqetqxlovratlk.supabase.co';
 const supabasekey = 'sb_publishable_dXV5VSUTZfknTi6Vs4kduA_iQ0MlsxK';
 
 // 2. Creamos el cliente UNA SOLA VEZ y de forma global
-let supabaseClient = null;
+let supabaseclient = null;
 
 // 3. Esperamos a que el HTML esté cargado antes de buscar el botón
 document.addEventListener('DOMContentLoaded', () => {
@@ -44,7 +44,7 @@ function conectarsupabase() {
         console.error("Detalles del error:", error);
     }
 }
-async function buscarCategoria() {
+async function buscarcategoria() {
     // 1. Verificar que el cliente esté conectado
     if (!supabaseClient) {
         alert("Primero debes conectarte 🔌");
@@ -63,7 +63,7 @@ async function buscarCategoria() {
 
     try {
         // 4. Construir la consulta base
-        let query = supabaseClient.from('categorias').select('*');
+        let query = supabaseclient.from('categorias').select('*');
 
         // 5. Filtrar según lo que el usuario escribió
         if (id) {
