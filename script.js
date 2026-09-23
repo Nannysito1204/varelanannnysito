@@ -1,6 +1,6 @@
 // 1. Tus credenciales
-const supabaseUrl = 'https://vfegtbeqetqxlovratlk.supabase.co'; 
-const supabaseKey = 'sb_publishable_dXV5VSUTZfknTi6Vs4kduA_iQ0MlsxK';
+const supabaseurl = 'https://vfegtbeqetqxlovratlk.supabase.co'; 
+const supabasekey = 'sb_publishable_dXV5VSUTZfknTi6Vs4kduA_iQ0MlsxK';
 
 // 2. Creamos el cliente UNA SOLA VEZ y de forma global
 let supabaseClient = null;
@@ -9,33 +9,33 @@ let supabaseClient = null;
 document.addEventListener('DOMContentLoaded', () => {
     
     // Asignamos el evento click al botón CONECTAR
-    const btnConectar = document.getElementById('btnConectar');
+    const btnconectar = document.getElementById('btnconectar');
     
-    if (btnConectar) {
-        btnConectar.addEventListener('click', conectarSupabase);
+    if (btnconectar) {
+        btnconectar.addEventListener('click', conectarsupabase);
     } else {
-        console.error("No se encontró el botón btnConectar en el HTML");
+        console.error("No se encontró el botón btnconectar en el HTML");
     }
 });
 
-const btnBuscar = document.getElementById('btnBuscar');
-    if (btnBuscar) {
-        btnBuscar.addEventListener('click', buscarCategoria);
+const btnbuscar = document.getElementById('btnbuscar');
+    if (btnbuscar) {
+        btnbuscar.addEventListener('click', buscarcategoria);
     } else {
         console.error("No se encontró el botón btnBuscar en el HTML");
     }
 
 // 4. Función que se ejecuta al hacer clic en CONECTAR
-function conectarSupabase() {
+function conectarsupabase() {
     try {
         // Si aún no se ha creado el cliente, lo creamos
-        if (!supabaseClient) {
-            supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+        if (!supabaseclient) {
+            supabaseclient = supabase.createClient(supabaseurl, supabasekey);
         }
         
         // Si se crea correctamente, mostramos el mensaje
         alert("CONEXIÓN EXITOSA");
-        console.log("Cliente Supabase inicializado correctamente:", supabaseClient);
+        console.log("Cliente supabase inicializado correctamente:", supabaseclient);
 
 
         
